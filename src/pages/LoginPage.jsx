@@ -11,6 +11,7 @@ function LoginPage() {
         justifyContent='center'
         p='20px'
         flex={1}
+        sx={{ display: { xs: 'none', sm: 'flex' } }}
       >
         <Typography variant='h3' color='#4D8ED3' fontWeight={900}>
           FakeBuck
