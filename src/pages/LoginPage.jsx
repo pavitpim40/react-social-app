@@ -1,18 +1,23 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Box, Typography, Button, TextField, Divider } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext';
 // import Box from '@mui/material/Box'
 
 function LoginPage() {
   const navigate = useNavigate();
+  const { login } = useContext(AuthContext); // <AuthContext.Provider value={return}>
+
   const [emailOrPhone, setEmailOrPhone] = useState('');
   const [password, setPassword] = useState('');
 
   const handleChangeEmailOrPhone = (e) => setEmailOrPhone(e.target.value);
   const handleChangePassword = (e) => setPassword(e.target.value);
-  const handleSubmitLogin = (e) => {
+
+  const handleSubmitLogin = async (e) => {
     e.preventDefault();
     if (emailOrPhone === 'qwer' && password === '1234') {
+      await login();
       navigate('/');
     } else {
       alert('Invalid username or password');

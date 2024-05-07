@@ -1,22 +1,19 @@
 /* eslint-disable react/prop-types */
-import { createContext, useState, useEffect } from 'react';
+import { createContext, useState } from 'react';
 import * as userAPI from '../apis/userApi';
 
 export const AuthContext = createContext();
 
 export default function AuthContextProvider({ children }) {
   const [user, setUser] = useState(null);
-  // Login => user = {}
-  // Logout => user = null
-  useEffect(() => {
-    login();
-  }, []);
 
   const login = async () => {
     try {
       const response = await userAPI.getUserById('1');
       setUser(response.data);
+      console.log(response.data);
     } catch (error) {
+      setUser(null);
       console.log(error);
     }
   };
