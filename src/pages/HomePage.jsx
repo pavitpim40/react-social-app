@@ -22,6 +22,13 @@ function HomePage() {
         size='medium'
         onClick={handleClick}
         endIcon={<DeleteIcon />}
+        sx={{
+          padding: '16px',
+          color: 'black',
+          '&:hover': {
+            color: 'white',
+          },
+        }}
       >
         Go to 404
       </Button>
