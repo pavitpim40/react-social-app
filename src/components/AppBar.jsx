@@ -30,6 +30,10 @@ function AppBar() {
     logout();
     navigate('/login');
   };
+
+  const handleClickToProfile = () => {
+    navigate('/profile');
+  };
   return (
     <MuiAppBar position='static'>
       <Toolbar
@@ -58,7 +62,7 @@ function AppBar() {
         <Box>
           <Avatar alt='Remy Sharp' onClick={handleClick} />
           <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-            <MenuItem>Profile</MenuItem>
+            <MenuItem onClick={handleClickToProfile}>Profile</MenuItem>
             <MenuItem onClick={handleLogOut}>Log out</MenuItem>
           </Menu>
         </Box>
