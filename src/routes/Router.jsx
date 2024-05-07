@@ -1,8 +1,9 @@
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HomePage from '../pages/HomePage';
 import LoginPage from '../pages/LoginPage';
 import ProfilePage from '../pages/ProfilePage';
 import NotFoundPage from '../pages/NotFoundPage';
+import AppLayout from '../layout/AppLayout';
 
 // createBrowserRouter : FN(Array<RouterObject>)
 // RouterProvider : Component
@@ -12,12 +13,7 @@ const router = createBrowserRouter([
   { path: '/login', element: <LoginPage /> },
   {
     path: '/',
-    element: (
-      <h1>
-        Layout
-        <Outlet />
-      </h1>
-    ),
+    element: <AppLayout />,
     children: [
       { path: '', element: <HomePage /> },
       { path: 'profile', element: <ProfilePage /> },
