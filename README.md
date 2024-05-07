@@ -6,4 +6,5 @@
 createBrowserRouter: FN;
 RouterProvider: React.Component; // Detect Path and Provide UI for specific path
 Link: React.Component; // Instant Redirection
+useNavigate: (Hook) => navigateFN; // Programmatically Redirection
 ```
