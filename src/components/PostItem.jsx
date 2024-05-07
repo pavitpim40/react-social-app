@@ -11,9 +11,10 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
-export default function RecipeReviewCard() {
+// eslint-disable-next-line react/prop-types
+export default function PostItem({ title, body }) {
   return (
-    <Card sx={{ maxWidth: 450 }}>
+    <Card sx={{ maxWidth: 450, textAlign: 'left' }}>
       {/* Header */}
       <CardHeader
         avatar={
@@ -26,8 +27,7 @@ export default function RecipeReviewCard() {
             <MoreVertIcon />
           </IconButton>
         }
-        title='Shrimp and Chorizo Paella'
-        subheader='September 14, 2016'
+        title={title}
       />
 
       {/* Media : รูปภาพ */}
@@ -40,8 +40,7 @@ export default function RecipeReviewCard() {
       {/* Content : เนื้อหา */}
       <CardContent>
         <Typography variant='body2' color='text.secondary'>
-          This impressive paella is a perfect party dish and a fun meal to cook together with your
-          guests. Add 1 cup of frozen peas along with the mussels, if you like.
+          {body}
         </Typography>
       </CardContent>
 
